@@ -1,4 +1,4 @@
 [[customizations.user]]
 name = "core"
-key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYAFgtpRXTmliXDIgZYXlJP3KGAfnauyiLIJARDcTahIZ7Pc3WaM3uVCyGEECRtToMatnxkg6GBziCrblshwQpQiZN9rtYzXgMWXelfpsjwKLnUOcbhWfM1A4guUyPM6S4oBroxVkJKWtwQck35ideSns1OquTVZFLCQgBHwsutvOn0aokaXd79dREkBXxLKVhT7C//oMBN6G8MCPeOx9ldq0pJidwkYDP/dgnFKrz5ZmhTV6gvU0kELHlU3vf01F6Uz6ern3tlibVczi2xfoHNfRCyhIpCJnYu3Oi+w1e+/kUsieTiO+rZBpkVf5V/2M489lJvznkyesDjks0Myxp valentin@Muji"
 groups = ["wheel"]
+key = ""
