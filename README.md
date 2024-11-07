@@ -35,6 +35,9 @@ For more information on supported values and next steps, please refer to the [bo
 ## Flashing an SD Card
 
 For flashing the disk image to an SD card you may use the official Raspberry Pi [Imager](https://www.raspberrypi.com/software/) tool.
-There are some additional steps required after flashing the disk, which are explained in a [great blog post by Ben Breard](https://mrguitar.net/?p=2605).
 
 ![screenshot](screenshots/imager.png)
+
+## Firmware
+
+We are almost done.  The last step is to fiddle with some firmware files, which are explained in a [great blog post by Ben Breard](https://mrguitar.net/?p=2605).  To download the files, just run `make firmware` and then copy the files onto your SD card as explained by Ben.  Note you may not be able to mount the SD card anymore on Mac OS.
