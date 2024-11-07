@@ -26,3 +26,8 @@ disk-image: oci-image
 		--rootfs $(ROOTFS) \
 		--local \
 		$(OCI_IMAGE)
+
+.PHONY: firmware
+firmware:
+	mkdir -p firmware-files
+	podman run -it --rm -v ./firmware-files:/tmp/efi -v ./tools:/tools $(OCI_IMAGE) /tools/fetch_efi.sh
