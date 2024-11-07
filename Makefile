@@ -10,6 +10,7 @@ oci-image:
 # See https://github.com/osbuild/bootc-image-builder
 .PHONY: disk-image
 disk-image: oci-image
+	mkdir -p ./output
 	podman run \
 		--rm \
 		-it \
