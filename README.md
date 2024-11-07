@@ -16,6 +16,9 @@ You can use the Makefile to automate most of the tasks involved:
 * `make disk-image` to convert the OCI image into a disk image
 
 Before running `make disk-image`, make sure to copy your public SSH key into the `config.toml`.
+The build steps require root privileges.
+On Linux, make sure to run as root (or via sudo).
+On Mac OS and Windows, make sure that your podman machine runs as root.
 
 You can use the following variables to tweak the image via `make $VARIABLE=$VALUE`:
 * `OCI_IMAGE` to change the reference of the OCI image (default: quay.io/vrothberg/fedora-bootc-pi:41`

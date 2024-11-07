@@ -5,12 +5,12 @@ ARCH ?= arm64
 
 .PHONY: oci-image
 oci-image:
-	sudo podman build --platform linux/$(ARCH) -t $(OCI_IMAGE) .
+	podman build --platform linux/$(ARCH) -t $(OCI_IMAGE) .
 
 # See https://github.com/osbuild/bootc-image-builder
 .PHONY: disk-image
 disk-image: oci-image
-	sudo podman run \
+	podman run \
 		--rm \
 		-it \
 		--privileged \
