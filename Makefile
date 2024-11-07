@@ -2,6 +2,7 @@ OCI_IMAGE ?= quay.io/vrothberg/fedora-bootc-pi:41
 DISK_TYPE ?= raw
 ROOTFS ?= xfs
 ARCH ?= arm64
+BIB_IMAGE ?= quay.io/centos-bootc/bootc-image-builder:latest
 
 .PHONY: oci-image
 oci-image:
@@ -9,7 +10,7 @@ oci-image:
 
 # See https://github.com/osbuild/bootc-image-builder
 .PHONY: disk-image
-disk-image: oci-image
+disk-image:
 	mkdir -p ./output
 	podman run \
 		--rm \
@@ -20,7 +21,7 @@ disk-image: oci-image
 		-v ./config.toml:/config.toml:ro \
 		-v ./output:/output \
 		-v /var/lib/containers/storage:/var/lib/containers/storage \
-		quay.io/centos-bootc/bootc-image-builder:latest \
+		$(BIB_IMAGE) \
 		--target-arch $(ARCH) \
 		--type $(DISK_TYPE) \
 		--rootfs $(ROOTFS) \
@@ -30,4 +31,4 @@ disk-image: oci-image
 .PHONY: firmware
 firmware:
 	mkdir -p firmware-files
-	podman run -it --rm -v ./firmware-files:/tmp/efi -v ./tools:/tools $(OCI_IMAGE) /tools/fetch_efi.sh
+	podman run --platform linux/$(ARCH) --pull=never -it --rm -v ./firmware-files:/tmp/efi -v ./tools:/tools $(OCI_IMAGE) /tools/fetch_efi.sh

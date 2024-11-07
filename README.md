@@ -4,6 +4,10 @@ This project aims at providing an easy way to build and manage Fedora bootc imag
 Once installed on your device, updates to your system happen in form of container images.
 Follow the instructions below to create your own OS.
 
+Current Blocker: https://github.com/osbuild/bootc-image-builder/issues/701
+
+Older Raspberry Pis (as my RPI3) require the boot partition to be MBR.  Bootc Image Builder is working on supporting that at the present.
+
 ## Customizing the OS
 
 The OS can be customized in the Containerfile which uses the `fedora-bootc` base image and adds only a few packages on top.
