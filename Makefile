@@ -11,7 +11,7 @@ oci-image:
 # See https://github.com/osbuild/bootc-image-builder
 .PHONY: disk-image
 disk-image:
-	./tools/check_ssh.sh
+	sh ./tools/check_ssh.sh
 	mkdir -p ./output
 	podman run \
 		--rm \
