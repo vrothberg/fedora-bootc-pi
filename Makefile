@@ -32,4 +32,4 @@ disk-image:
 .PHONY: firmware
 firmware:
 	mkdir -p firmware-files
-	podman run --platform linux/$(ARCH) --pull=never -it --rm -v ./firmware-files:/tmp/efi -v ./tools:/tools $(OCI_IMAGE) /tools/fetch_efi.sh
+	podman run --privileged --platform linux/$(ARCH) --pull=never -it --rm -v ./firmware-files:/tmp/efi -v ./tools:/tools $(OCI_IMAGE) /tools/fetch_efi.sh
